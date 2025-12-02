@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+/* .......... */
+@media print {
+  /* Force full A4 usage — no margins at all */
+  @page {
+    size: A4 portrait;
+    margin: 0mm;
+  }
+
+  html, body {
+    margin: 0 !important;
+    padding: 0 0 0 -199px !important;
+    background: #fff !important;
+    width: 310mm;
+    height: 210mm;
+    overflow: hidden !important;
+  }
+
+  /* Hide sidebar, headers, buttons, etc. */
+  aside,
+  nav,
+  header,
+  footer,
+  button,
+  .no-print,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* ✅ Perfectly aligned I-Card grid for printing */
+  .print-area {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: start;
+    gap: 6mm;
+    width: 100%;
+    height: 100%;
+    padding: 6mm 8mm; /* small inside padding for safe print edges */
+    box-sizing: border-box;
+    margin: 0 !important;
+    background: #fff !important;
+  }
+
+  .print-area > div {
+    width: 60mm; /* card size fits 3 per row on A4 */
+    height: 90mm;
+    border: 0.4mm solid #888;
+    border-radius: 4mm;
+    page-break-inside: avoid;
+    box-shadow: none !important;
+    transform: scale(0.98);
+  }
+
+  /* Remove any outer container padding/margin */
+  .max-w-7xl,
+  .min-h-screen,
+  .bg-gradient-to-br,
+  main {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+  }
+}
+
+/* ........... */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
