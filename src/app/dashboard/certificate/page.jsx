@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { ArrowLeft, Download } from "lucide-react";
 import { useRouter } from "next/navigation";
+import schoolData from "@/data/schoolData";
 
 export default function CertificateGenerator() {
   const router = useRouter();
@@ -30,7 +31,7 @@ export default function CertificateGenerator() {
     ctx.fillStyle = "#4c1d95";
     ctx.font = "bold 36px serif";
     ctx.textAlign = "center";
-    ctx.fillText("Sanskar Valley School", canvas.width / 2, 80);
+    ctx.fillText(  `${schoolData.name}`, canvas.width / 2, 80);
 
     // Title
     ctx.font = "40px serif";

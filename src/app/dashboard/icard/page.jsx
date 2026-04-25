@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import schoolData from "@/data/schoolData";
 
 export default function ICardPage() {
   const router = useRouter();
@@ -207,7 +208,7 @@ export default function ICardPage() {
               >
                 <div className="bg-indigo-600 text-white p-2 text-center">
                   <h2 className="text-sm font-bold leading-tight">
-                    Sanskar Valley School
+                      {schoolData.name}
                   </h2>
                   <p className="text-[10px] text-indigo-100 leading-tight">
                     Knowledge | Discipline | Growth

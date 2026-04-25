@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Plus, Printer, Eye, X, Pencil, Trash2, Save } from "lucide-react";
+import schoolData from "@/data/schoolData";
 
 const QUESTION_TYPES = [
   "Objective",
@@ -15,7 +16,8 @@ export default function ExamPaperBuilder() {
   const [selectedQuestions, setSelectedQuestions] = useState([]);
 
   // Editable Header Fields
-  const [schoolName, setSchoolName] = useState("Sanskar Valley School");
+  const [schoolName, setSchoolName] = useState(`${schoolData.name}`);
+
   const [examName, setExamName] = useState("Unit Test - 1");
   const [className, setClassName] = useState("Class 4th");
   const [subjectName, setSubjectName] = useState("Science");

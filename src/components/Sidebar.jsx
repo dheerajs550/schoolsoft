@@ -25,7 +25,7 @@ export default function Sidebar() {
           {/* Logo Section */}
           {/* <a href="/dashboard">
             <h1 className="text-2xl font-bold text-indigo-700 mb-1">
-              Sanskar Valley
+               {schoolData.name}
             </h1>
           </a>
           <p className="text-sm text-slate-600 mb-8">Admin Dashboard</p> */}

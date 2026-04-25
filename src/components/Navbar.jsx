@@ -1,4 +1,5 @@
 "use client";
+import schoolData from "@/data/schoolData";
 import React from "react";
 
 export default function Navbar() {
@@ -13,7 +14,7 @@ export default function Navbar() {
             className="h-10 w-10 rounded-full object-cover bg-white p-1 shadow-md"
           />
           <h1 className=" text-2xl font-bold text-purple-700">
-            Sanskar Valley School
+           {schoolData.name}
           </h1>
           
         </div>

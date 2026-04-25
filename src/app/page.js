@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import schoolData from "@/data/schoolData";
 
 export default function Page() {
   const router = useRouter(); // ✅ create router instance
@@ -24,7 +25,7 @@ export default function Page() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-100 via-white to-emerald-100">
       <div className="w-full max-w-md bg-white/80 backdrop-blur-md rounded-2xl shadow-md p-8 border border-white/40">
         <h1 className="text-3xl font-bold text-center text-indigo-700 mb-2">
-          Sanskar Valley
+           {schoolData.name}
         </h1>
         <p className="text-center text-sm text-gray-600 mb-6">
           Login to your account
